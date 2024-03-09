@@ -1,0 +1,48 @@
+{% extends 'Home/base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+</head>
+<body>
+    <div id="contact-form-wrap">
+        <h2>Contact Us</h2>
+        <form id="contact-form" action="{% url 'Home-contact' %}" method="post" onsubmit="return validateForm()">
+            {% csrf_token %}
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[A-Za-z ]+" title="Name should only contain letters and spaces">
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </p>
+            <p>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            </p>
+            <p>
+                <center><input type="submit" id="submit" value="Submit"></center>
+            </p>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var emailField = document.getElementById("email");
+            var emailValue = emailField.value;
+
+            if (!emailValue.endsWith("@gmail.com")) {
+                alert("Email should be in the format example@gmail.com");
+                emailField.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'Home/base.html' %}
+     {% block content %}
+
+
+<html>
+<head>
+    <title>Astrology Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3f3f3;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .service-title {
+            font-size: 24px;
+            color: #007bff;
+        }
+
+        .service-description {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        #contact-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #contact-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="colour : white">Astrology Services</h1>
+
+    <div class="service-card">
+        <div class="service-title">Natal Chart Analysis</div>
+        <div class="service-description">Discover insights into your personality, strengths, and life path through a personalized natal chart analysis.</div>
+       <a href="{% url 'user-chartanalysis' %}"> <button id="contact-button">Analyse</button> </a>
+    </div>
+
+    <div class="service-card">
+        <div class="service-title"> Zodaic Sign </div>
+        <div class="service-description"></div>
+        <a href="{% url 'user-reading' %}"> <button id="contact-button"> Get Zodaic </button> </a>
+    </div>
+
+    <div class="service-card">
+        <div class="service-title">Contact Us</div>
+        <div class="service-description"> If you have any queries please contact us</div>
+       <a href="{% url 'Home-contactus' %}"><button id="contact-button">Contact Us</button> </a>
+    </div>
+
+    <!-- Add more service cards as needed -->
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'Home/base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="responsive" style="padding-top:20px;">
+        <div class="card">
+          <img src="https://phantom-marca.unidadeditorial.es/fa0c397562b88243bc1eba75ecf4f4f1/crop/0x0/1198x674/resize/828/f/jpg/assets/multimedia/imagenes/2022/04/20/16504400054214.jpg" class="card-img-top" alt="Daily Horoscopes">
+          <div class="card-body">
+            <h5 class="card-title">Daily Horoscopes</h5>
+            <a href="{% url 'user-daily' %}" class="btn btn-primary">Go to Daily Horoscopes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="responsive" style="padding-top:20px;">
+        <div class="card">
+          <img src="https://phantom-marca.unidadeditorial.es/a47339eb27567427b49a188c5dbb4503/crop/0x0/1320x743/resize/828/f/jpg/assets/multimedia/imagenes/2022/05/09/16520814124194.jpg" class="card-img-top" alt="Weekly Horoscopes">
+          <div class="card-body">
+            <h5 class="card-title">Weekly Horoscopes</h5>
+            <a href="{% url 'user-weekly' %}" class="btn btn-primary">Go to Weekly Horoscopes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="responsive" style="padding-top:20px;">
+        <div class="card">
+          <img src="https://phantom-marca.unidadeditorial.es/e5d30fa0199ded7e74de09efcf8a4d7c/crop/0x0/1278x719/resize/828/f/jpg/assets/multimedia/imagenes/2022/03/26/16482842357510.jpg" class="card-img-top" alt="Monthly Horoscopes">
+          <div class="card-body">
+            <h5 class="card-title">Monthly Horoscopes</h5>
+            <a href="{% url 'user-monthly' %}" class="btn btn-primary">Go to Monthly Horoscopes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="responsive" style="padding-top:20px;">
+        <div class="card">
+          <img src="https://phantom-marca.unidadeditorial.es/8f6a6df0cbae16af850f93b5be17c1d2/crop/0x0/1278x719/resize/828/f/jpg/assets/multimedia/imagenes/2022/03/25/16481967201817.jpg" class="card-img-top" alt="Yearly Horoscopes">
+          <div class="card-body">
+            <h5 class="card-title">Yearly Horoscopes</h5>
+            <a href="{% url 'user-yearly' %}" class="btn btn-primary">Go to Yearly Horoscopes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

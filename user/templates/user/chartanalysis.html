@@ -1,0 +1,102 @@
+{% extends 'Home/base.html' %}
+{% block content %}
+<html>
+<head>
+    <title>Natal Chart Analysis</title>
+    <style>
+        /* Center the card on the page */
+        .centered-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Card-like container styles */
+        .card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 50px;
+        }
+
+        .input-field {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered-card">
+        <div class="card">
+            <h1>Natal Chart Analysis</h1>
+            <form id="analysis-form" method="POST" action="">
+                {% csrf_token %}
+                <div class="input-field">
+                    <label for="birth-date">UserName:</label>
+                    <input type="text" oninput="updateAnalysis()" name="name" placeholder="Your Name" required pattern="[A-Za-z ]+" title="Name should only contain letters and spaces">
+                </div>
+                <div class="input-field">
+                    <label for="birth-date">Date of Birth:</label>
+                    <input type="date" id="birth-date" oninput="updateAnalysis()" name="birthdate">
+                </div>
+
+                <div class="input-field">
+                    <label for="birth-time">Time of Birth:</label>
+                    <input type="time" id="birth-time" oninput="updateAnalysis()" name="birthtime">
+                </div>
+
+                <div class="input-field">
+                    <label for="birth-place">Place of Birth:</label>
+                    <input type="text" id="birth-place" oninput="updateAnalysis()" name="birthplace" placeholder="BirthPlace" required pattern="[A-Za-z ]+" title="Place of birth should only contain letters and spaces">
+                </div>
+
+                <div class="input-field">
+                    <button type="button" id="analyze-button" onclick="performAnalysis()">Analyse</button>
+                </div>
+            </form>
+            <div id="analysis-result"></div>
+        </div>
+    </div>
+
+    <script>
+        let analysisPerformed = false; // Flag to track whether analysis has been performed
+
+        function updateAnalysis() {
+            analysisPerformed = false; // Reset the flag when any input changes
+        }
+
+        function performAnalysis() {
+            if (!analysisPerformed) {
+                const birthDate = document.getElementById("birth-date").value;
+                const birthTime = document.getElementById("birth-time").value;
+                const birthPlace = document.getElementById("birth-place").value;
+
+                // Replace this example with a real Natal Chart Analysis logic
+                const analysisResult = generateRandomAnalysis();
+
+                document.getElementById("analysis-result").textContent = analysisResult;
+                analysisPerformed = true; // Set the flag to true to indicate analysis has been performed
+            }
+        }
+
+        function generateRandomAnalysis() {
+            const analysisOptions = [
+                "You are a highly creative and imaginative person.",
+                "Your chart suggests a strong focus on communication and networking.",
+                "This is a period of personal growth and transformation for you.",
+                "Embrace new opportunities and challenges with an open mind.",
+                "Your chart indicates a strong connection to art and aesthetics.",
+            ];
+
+            const randomIndex = Math.floor(Math.random() * analysisOptions.length);
+            return analysisOptions[randomIndex];
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

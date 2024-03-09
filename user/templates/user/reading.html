@@ -1,0 +1,129 @@
+{% extends 'Home/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zodiac Sign Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3f3f3;
+        }
+
+        .centered-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+            margin: 0 auto;
+            padding: 50px ;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #zodiac-form {
+            margin: 20px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px; /* Add margin to create space between text box and button */
+        }
+
+        #find-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #find-button:hover {
+            background-color: #0056b3;
+        }
+
+        #zodiac-result {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered-card">
+        <div class="card">
+            <h1>Zodiac Sign Finder</h1>
+            <form id="zodiac-form" action="" method="post" >
+                {% csrf_token %}
+
+
+                <label for="birth-date">BirthDate:</label>
+                <input type="date" id="birth-date" name="birth_date">
+                <br>
+                <button type="button" id="find-button" onclick="findZodiacSign()">Find Zodiac Sign</button>
+            </form>
+            <div id="zodiac-result"></div>
+        </div>
+    </div>
+
+    <script>
+        function findZodiacSign() {
+            const birthDate = document.getElementById("birth-date").value;
+            const date = new Date(birthDate);
+            const month = date.getMonth() + 1; // Months are zero-based
+
+            let zodiacSign = "";
+            // Determine the zodiac sign based on the month
+            if ((month == 3 && date.getDate() >= 21) || (month == 4 && date.getDate() <= 19)) {
+                zodiacSign = "Aries";
+            } else if ((month == 4 && date.getDate() >= 20) || (month == 5 && date.getDate() <= 20)) {
+                zodiacSign = "Taurus";
+            } else if ((month == 5 && date.getDate() >= 21) || (month == 6 && date.getDate() <= 20)) {
+                zodiacSign = "Gemini";
+            } else if ((month == 6 && date.getDate() >= 21) || (month == 7 && date.getDate() <= 22)) {
+                zodiacSign = "Cancer";
+            } else if ((month == 7 && date.getDate() >= 23) || (month == 8 && date.getDate() <= 22)) {
+                zodiacSign = "Leo";
+            } else if ((month == 8 && date.getDate() >= 23) || (month == 9 && date.getDate() <= 22)) {
+                zodiacSign = "Virgo";
+            } else if ((month == 9 && date.getDate() >= 23) || (month == 10 && date.getDate() <= 22)) {
+                zodiacSign = "Libra";
+            } else if ((month == 10 && date.getDate() >= 23) || (month == 11 && date.getDate() <= 21)) {
+                zodiacSign = "Scorpio";
+            } else if ((month == 11 && date.getDate() >= 22) || (month == 12 && date.getDate() <= 21)) {
+                zodiacSign = "Sagittarius";
+            } else if ((month == 12 && date.getDate() >= 22) || (month == 1 && date.getDate() <= 19)) {
+                zodiacSign = "Capricorn";
+            } else if ((month == 1 && date.getDate() >= 20) || (month == 2 && date.getDate() <= 18)) {
+                zodiacSign = "Aquarius";
+            } else {
+                zodiacSign = "Pisces";
+            }
+
+            document.getElementById("zodiac-result").textContent = "Your zodiac sign is " + zodiacSign + ".";
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

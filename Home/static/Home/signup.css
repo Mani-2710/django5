@@ -1,0 +1,72 @@
+/* Reset some default styles */
+body, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+body {
+  background:url(https://individualogist.com/wp-content/uploads/astrology-wheel.jpg);
+  font-family: Arial, sans-serif;
+}
+  /* Basic styling for the signup form */
+  #signup-form-wrap {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  /* Styling for the signup button */
+  #Signup {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  #Signup:hover {
+    background-color: #45a049;
+  }
+
+  /* Styling for the login link */
+  #login-wrap {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #login-wrap a {
+    text-decoration: none;
+    color: #007BFF;
+  }
+
+  #login-wrap a:hover {
+    text-decoration: underline;
+  }

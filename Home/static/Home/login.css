@@ -1,0 +1,76 @@
+/* styles.css */
+
+/* Reset some default styles */
+body, h2, p {
+  margin: 5;
+  padding: 5;
+}
+
+/* Style the body background and font */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Style the login form container */
+#login-form-wrap {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px ;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style the h2 header */
+h2 {
+  color: #333;
+  text-align: center;
+}
+
+/* Style form labels */
+label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Style form input fields */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style the login button */
+#login {
+  background-color:  #4caf50;
+  color:white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+#Signup:hover {
+  background-color: #45a049;
+}
+
+/* Style the signup link */
+#signup-wrap {
+  text-align:center;
+  margin-top: 20px;
+}
+
+#signup-wrap a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+#signup-wrap a:hover {
+  text-decoration: underline;
+}

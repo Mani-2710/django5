@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %} <!-- Load the static template tag -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrology</title>
+    <link rel="stylesheet" href="{% static 'Home/index.css' %}"> <!-- Use the static template tag for your CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="home">
+        <video autoplay muted loop>
+            <source src="{% static 'resources/astrology.mp4' %}" type="video/mp4"> <!-- Use the static template tag for your video source -->
+        </video>
+    </div>
+    <div class="overlay"></div>
+    <center><div class="home-content">
+        <h1 >ASTRO VISION</h1>
+        <div class="middle-line"></div>
+        <button type="submit" ><a href="{% url 'Home-login' %} "style="color:#9df9ef;">DISCOVER</a></button>
+    </div></center>
+</body>
+</html>

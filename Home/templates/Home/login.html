@@ -1,0 +1,112 @@
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+        body {
+            font-family: 'Arial';
+            background-color: #CB8CC1 ;
+            background-image: url('path/../../static/images/bg2.jpg');
+            margin: 0;
+            padding: 0;
+        }
+
+        #login-form-wrap {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #C3D5DD    ;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        .para-2 {
+            text-align: center;
+        }
+
+        #login {
+            background-color: #5E63B9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #login:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <!-- Add your script and font links here as before -->
+</head>
+<body>
+    <div id="login-form-wrap">
+        <h2>LOGIN</h2>
+        <form METHOD="post" action="{% url 'checklogin' %}">
+            {% csrf_token %}
+
+            {% if error_message %}
+                <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+
+            <p>
+                <label for="Username"><b>Username</b></label>
+                <input type="text" id="Username" name="username" placeholder="Username" required><i class=""><span></span><span></span></i>
+            </p>
+
+            <p>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="pwd" required>
+            </p>
+
+            <p>
+                <center> <input  type="submit" id="login" value="Login"> </center>
+            </p>
+        </form>
+    </div>
+
+    <p class="para-2">Don't have an account?
+        <a href="{% url 'Home-Register' %}">Signup here</a>
+    </p>
+
+    <p class="para-2">
+        <center> <a href="{% url 'Home-forgotpassword' %}"></a> </center>
+    </p>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,43 @@
+/* Customize the background color and text color of the navbar */
+.navbar {
+    background-color: #333; /* Change the background color to your preference */
+    color: #fff; /* Change the text color to your preference */
+}
+
+/* Style the brand/logo in the navbar */
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+body {
+  background:url(https://individualogist.com/wp-content/uploads/astrology-wheel.jpg);
+  font-family: Arial, sans-serif;
+}
+/* Style the navigation links in the navbar */
+.navbar-nav .nav-link {
+    color: #fff; /* Change the text color to your preference */
+    margin-right: 20px; /* Adjust the spacing between links */
+}
+
+/* Change the color of links when you hover over them */
+.navbar-nav .nav-link:hover {
+    color: #ffd700; /* Change the hover color to your preference */
+}
+
+/* Style the mobile menu button (navbar-toggler) */
+.navbar-toggler {
+    background-color: #fff; /* Change the button background color */
+}
+
+/* Style the toggle icon in the mobile menu */
+.navbar-toggler-icon {
+    background-color: #333; /* Change the icon color */
+}
+
+/* Center-align the mobile menu button on small screens */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        margin: 0 auto;
+    }
+}

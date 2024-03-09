@@ -1,0 +1,60 @@
+{% extends 'Home/base.html' %}
+     {% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Astrology Universe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('path/../../static/images/');
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Our Mission</h2>
+        <p>We are passionate about astrology and its ability to provide guidance and insights into people's lives. Our mission is to share our knowledge and expertise in astrology with the world and help individuals discover their true potential through the power of the stars.</p>
+
+        <h2>Meet Our Team</h2>
+        <p>
+            <strong>Manikanta</strong> - Astrologer<br>
+            Manikanta has been studying astrology for over 20 years and is renowned for his accurate predictions and insightful horoscopes.
+        </p>
+        <p>
+            <strong>Rakesh</strong> - Astrologer<br>
+            Rakesh is a certified astrologer with a deep understanding of the zodiac signs and their influence on human behavior.
+        </p>
+        <p>
+             <strong>Kundan</strong> - Astrologer<br>
+            Kundan has been studying astrology for over 10 years and is renowned for his accurate predictions and insightful horoscopes.
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to get in touch with us, please feel free to reach out to our team at <a href="{% url 'Home-contactus' %}">contactus</a>.</p>
+    </div>
+</body>
+</html>
+
+{% endblock %}
